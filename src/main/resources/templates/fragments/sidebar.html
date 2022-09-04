@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link th:href="@{public.css}" href="public.css" rel="stylesheet" type="text/css" />
+    <link th:href="@{css/bootstrap.min.css}" href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<nav th:fragment="sidebar" class="navbar navbar-expand d-flex flex-column align-item-start"
+     id="sidebar">
+    <a href="#" class="navbar-brand text-light mb-4">
+        <div class="display-5 font-weight-bold">
+            TMA
+        </div>
+    </a>
+    <ul class="navbar-nav d-flex flex-column w-100">
+
+        <li class="nav-item w-100">
+            <a class="nav-link text-light pl-4" href="/equipment">My Equipments</a>
+        </li>
+        <li class="nav-item w-100">
+            <a class="nav-link text-light pl-4" href="/user">My info</a>
+        </li>
+        <li class="nav-item w-100">
+            <a class="nav-link text-light pl-4" href="#" onClick="logout()">Logout</a>
+        </li>
+        <form id="logoutForm" th:action="@{/logout}" method="post">
+        </form>
+    </ul>
+
+</nav>
+</body>
+</html>

@@ -1,0 +1,31 @@
+* {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                    background-color: rgb(32 33 36);
+                    color: rgb(154 160 166);
+                    font-size: 50px;
+                    font-family: "Lucida Console", "Courier New", monospace;
+                }
+                body{
+                    min-height: 100vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                a{
+                    text-decoration: none;
+                    font-size: 25px;
+                    padding: 12px;
+                    background-color: rgb(154 160 166);
+                    color: rgb(32 33 36);
+                    border-radius: 16px;
+                }
+
+                a:hover{
+                    background-color: rgb(154 200 166);
+                    color: rgb(32 33 36);
+                }
+

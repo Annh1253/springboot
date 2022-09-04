@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8" />
+    <title>Loda</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!--css-->
+    <link th:href="@{public.css}" href="public.css" rel="stylesheet" type="text/css" />
+    <link th:href="@{css/bootstrap.min.css}" href="bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" th:src="@{js/bootstrap.bundle.min.js}"></script>
+    <script type="text/javascript" th:src="@{js/app.js}"></script>
+
+</head>
+<body>
+<div sec:authorize="isAuthenticated()">
+    Authenticated as <span sec:authentication="name"></span></div>
+<div th:text = "${message}">
+
+</div>
+<div th:replace="fragments/sidebar :: sidebar">
+    sidebar
+</div>
+
+</body>
+
+</html>

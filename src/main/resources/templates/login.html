@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example </title>
+    <link th:href="@{css/bootstrap.min.css}" href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" th:src="@{js/bootstrap.bundle.min.js}"></script>
+    <style>
+        body {
+
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0067FF;
+            background-image: linear-gradient(-315deg, #0067FF 0%, #008FFD 30%);
+        }
+
+        .login {
+            width: 360px;
+            height: min-content;
+            padding: 20px;
+            border-radius: 12px;
+            background: #FFF;
+        }
+
+        .login h1 {
+            font-size: 36px;
+            margin-bottom: 25px;
+
+        }
+
+        .login form .form-group {
+            margin-bottom: 12px;
+        }
+
+        .login form input[type=submit] {
+            font-size: 20px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="login">
+
+    <div th:if="${param.error}">
+        <div id="alert" class="alert alert-danger alert-dismissible" role="alert">
+            <div>Invalid credential</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <div th:if="${param.logout}">
+        <div id="warning" class="alert alert-warning alert-dismissible" role="warning">
+            <div>You have log out</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    </div>
+    <form th:action="@{/login}" method="post">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="text" class="form-control" id="email" name="email">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="pass" class="form-label">Password</label>
+            <input type="password" class="form-control" id="pass" name="pass">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+       <div style="display: flex;
+            align-items: center;
+            justify-content: center;">
+           <button type="submit" class="btn btn-primary">Login</button>
+       </div>
+
+
+    </form>
+</div>
+</body>
+</html>
